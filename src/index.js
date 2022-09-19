@@ -7,6 +7,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import {Panel as Cliente} from './componentes/cliente/Panel'
 import {Panel as Conceptos} from './componentes/conceptos_punto/Panel'
 import {Panel as ReglasPuntos} from './componentes/reglas_punto/Panel'
+import Home from './componentes/menu/Home'
 
 
 
@@ -16,6 +17,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<App/>}>
+        <Route path='home' index element={<Home />} />
         <Route  path='clientes' element={<Cliente/>} />
         <Route  path='conceptos' element={<Conceptos/>} />
         <Route  path='reglasPuntos' element={<ReglasPuntos/>} />
