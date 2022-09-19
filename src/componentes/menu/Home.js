@@ -9,16 +9,19 @@ const Home = () =>{
                 <br/>
                 <h2>Trabajo Practico de Fidelizacion de Clientes</h2>
                 <section>
-                    <br/>
+                    <hr/>
                     <h3>Desarrollado por: </h3>
-                    <br/>
                     <div className='container-div'>
                         <div class="p-2">Yanina Jara</div>
                         <div class="p-2">Alberto Valdez</div>
                         <div class="p-2">Melinda Gimenez</div>
                     </div>
-
                 </section>
+                <br/>
+                <h6><b>San Lorenzo - Paraguay</b></h6>
+                <h6><b>2022</b></h6>
+
+                
             </div>
         </>
     );
