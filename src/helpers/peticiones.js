@@ -83,7 +83,6 @@ const Peticiones = () => {
           "headers": {
             "Content-Type": "application/json",
            },
-            "body": JSON.stringify(datos)
         });
         const res = await fetch(url)
         const data = await res.json();
