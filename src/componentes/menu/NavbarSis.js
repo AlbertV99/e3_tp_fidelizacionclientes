@@ -7,12 +7,12 @@ const NavbarSis = () =>{
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>Fidelizacion Clientes</Navbar.Brand>
+        <Navbar.Brand href="home">Fidelizacion Clientes</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Clientes" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Blosas de puntos</NavDropdown.Item>
+              <NavDropdown.Item c>Blosas de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="clientes">Cliente</NavDropdown.Item>
             </NavDropdown>
