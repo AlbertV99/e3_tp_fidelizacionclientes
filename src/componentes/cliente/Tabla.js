@@ -9,8 +9,8 @@ const  Tabla = ({datos}) => {
   return (
     <>
         <table className="table table-striped table-hover" style={{backgroundColor:"#ffffff"}}>
-            <thead>
-                <tr style={{backgroundColor:'darkblue',color:'white'}}>
+            <thead className="table-dark">
+                <tr >
 
                     {
                         cabecera.map(

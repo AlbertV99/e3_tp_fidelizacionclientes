@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavbarSis/>
+      <br/>
       <Outlet/>
     </div>
   );

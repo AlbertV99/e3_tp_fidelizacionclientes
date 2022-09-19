@@ -17,7 +17,7 @@ export const Panel = () => {
 
     return (
         <>
-            <h2>Clientes</h2>
+            <h1>Clientes</h1>
             <br/>
             <div className="container-fluid " id="acciones">
                 <div className="row">
@@ -26,9 +26,9 @@ export const Panel = () => {
                             <button className = "btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#modalFiltro" >Filtros</button>
 
                             <div className="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" className="btn btn-primary"  ><i className="bi bi-caret-left-fill"></i></button>
+                                <Button variant="primary"  ><i className="bi bi-caret-left-fill"></i></Button>
                                 <button type="button" className="btn btn-outline-primary"> {datos.pagina_actual} </button>
-                                <button type="button" className="btn btn-primary" ><i className="bi bi-caret-right-fill"></i></button>
+                                <Button variant="primary" ><i className="bi bi-caret-right-fill"></i></Button>
                             </div>
 
                         </div>
