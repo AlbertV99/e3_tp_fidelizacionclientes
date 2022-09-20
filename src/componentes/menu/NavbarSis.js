@@ -7,12 +7,12 @@ const NavbarSis = () =>{
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="home">Fidelizacion Clientes</Navbar.Brand>
+        <Navbar.Brand href="house">Fidelizacion Clientes</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Clientes" id="collasible-nav-dropdown">
-              <NavDropdown.Item c>Blosas de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="house">Blosas de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="clientes">Cliente</NavDropdown.Item>
             </NavDropdown>
@@ -21,22 +21,22 @@ const NavbarSis = () =>{
               <NavDropdown.Divider />
               <NavDropdown.Item href="reglasPuntos">Reglas de asignacion de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Parametrizacion de vencimientos de puntos</NavDropdown.Item>   
+              <NavDropdown.Item href="house">Parametrizacion de vencimientos de puntos</NavDropdown.Item>   
             </NavDropdown>
-            <Nav.Link href="#features">Uso de puntos</Nav.Link>
+            <Nav.Link href="house">Uso de puntos</Nav.Link>
             <NavDropdown title="Reportes" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Uso de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="house">Uso de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Clientes con puntos a vencer</NavDropdown.Item>
+              <NavDropdown.Item href="house">Clientes con puntos a vencer</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Consulta de clientes</NavDropdown.Item>
+              <NavDropdown.Item href="house">Consulta de clientes</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Servicios" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Carga de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="house">Carga de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">Utilizar puntos</NavDropdown.Item>
+              <NavDropdown.Item href="house">Utilizar puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Consultar puntos por x monto</NavDropdown.Item>
+              <NavDropdown.Item href="house">Consultar puntos por x monto</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
