@@ -7,6 +7,8 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import {Panel as Cliente} from './componentes/cliente/Panel'
 import {Panel as Conceptos} from './componentes/conceptos_punto/Panel'
 import {Panel as ReglasPuntos} from './componentes/reglas_punto/Panel'
+import {Panel as PuntosVencimiento} from './componentes/puntos_vencimiento/Panel'
+import {Panel as BolsasPunto} from './componentes/bolsas_punto/Panel'
 import Home from './componentes/menu/Home'
 import House from './componentes/menu/Home'
 
@@ -23,6 +25,8 @@ root.render(
         <Route  path='clientes' element={<Cliente/>} />
         <Route  path='conceptos' element={<Conceptos/>} />
         <Route  path='reglasPuntos' element={<ReglasPuntos/>} />
+        <Route  path='puntosVencimiento' element={<PuntosVencimiento/>} />
+        <Route  path='bolsasPunto' element={<BolsasPunto/>} />
       </Route>
     </Routes>
   </BrowserRouter>

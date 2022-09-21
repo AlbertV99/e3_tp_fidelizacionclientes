@@ -12,7 +12,7 @@ const NavbarSis = () =>{
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Clientes" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="house">Blosas de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="bolsasPunto">Bolsas de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="clientes">Cliente</NavDropdown.Item>
             </NavDropdown>
@@ -21,7 +21,7 @@ const NavbarSis = () =>{
               <NavDropdown.Divider />
               <NavDropdown.Item href="reglasPuntos">Reglas de asignacion de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="house">Parametrizacion de vencimientos de puntos</NavDropdown.Item>   
+              <NavDropdown.Item href="puntosVencimiento">Parametrizacion de vencimientos de puntos</NavDropdown.Item>   
             </NavDropdown>
             <Nav.Link href="house">Uso de puntos</Nav.Link>
             <NavDropdown title="Reportes" id="collasible-nav-dropdown">
