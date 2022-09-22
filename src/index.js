@@ -12,6 +12,8 @@ import {Panel as BolsasPunto} from './componentes/bolsas_punto/Panel'
 import Home from './componentes/menu/Home'
 import House from './componentes/menu/Home'
 import Bolsa from './componentes/reportes/bolsa_puntos'
+import ConsultaClientes from './componentes/reportes/consulta_cliente';
+import ConsultarMonto from './componentes/servicio/consultar_punto_ por_monto';
 
 
 
@@ -29,6 +31,8 @@ root.render(
         <Route  path='puntosVencimiento' element={<PuntosVencimiento/>} />
         <Route  path='bolsasPunto' element={<BolsasPunto/>} />
         <Route  path='bolsas' element={<Bolsa/>} />
+        <Route  path='consulta_cliente' element={<ConsultaClientes/>} />
+        <Route  path='consulta_monto' element={<ConsultarMonto/>} />
       </Route>
     </Routes>
   </BrowserRouter>

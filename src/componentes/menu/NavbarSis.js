@@ -40,14 +40,14 @@ const NavbarSis = () =>{
               <NavDropdown.Divider />
               <NavDropdown.Item href="home">Clientes con puntos a vencer</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="home">Consulta de clientes</NavDropdown.Item>
+              <NavDropdown.Item href="consulta_cliente">Consulta de clientes</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Servicios" id="collasible-nav-dropdown">
               <NavDropdown.Item href="home">Carga de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="home">Utilizar puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="home">Consultar puntos por x monto</NavDropdown.Item>
+              <NavDropdown.Item href="consulta_monto">Consultar puntos por x monto</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
