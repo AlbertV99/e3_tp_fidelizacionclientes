@@ -24,7 +24,7 @@ const ConsultaClientes = () => {
                     </div>
                     <div className="row" >
                         <Form.Label htmlFor="cliente">Cumpleaños</Form.Label>
-                        <Form.Select><option>cumpleaños 1</option></Form.Select>
+                        <Form.Control type="date" id="cliente"/>
                     </div>
                 </div>
             </Modal.Body>
