@@ -1,6 +1,7 @@
 # e3_tp_fidelizacionclientes
 
 1- Cliente (cliente)
+
 Id (AI)
 nombre
 apellido
