@@ -23,13 +23,13 @@ const ConsultarMonto = () => {
                 <div className="container">
                     <div className="row" >
                         {/* <Form.Label htmlFor="cantidad_puntos">Cantidad de puntos que equivale </Form.Label> */}
-                        <div class="alert alert-primary bi bi-check-circle-fill" role="alert">  La cantidad de puntos es: </div>
+                        <div class="alert alert-primary bi bi-info-circle-fill" role="alert">  La cantidad de puntos es: </div>
                     </div> 
                 </div>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                {/* <Button variant="success" > Descargar</Button> */}
+                <Button variant="success" > Enviar</Button>
             </Modal.Footer>
         </Modal>
     </>
