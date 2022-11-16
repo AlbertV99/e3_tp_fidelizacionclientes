@@ -1,18 +1,18 @@
 import React,{useState,useEffect} from 'react';
 import Tabla from './Tabla';
 import Formulario from './Formulario';
-import FetchUsuario from '../../helpers/peticiones';
+import Peticiones from '../../helpers/peticiones';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
-    const [obtenerPanel,,] = FetchUsuario();
+    const [obtenerPanel,,] = Peticiones();
 
     useEffect(()=>{
-        obtenerPanel("usuario",setDatos)
-        console.log(datos);
+        console.log("Testing traida datos")
+        obtenerPanel("listar/cliente",setDatos)
     },[]);
 
     return (
