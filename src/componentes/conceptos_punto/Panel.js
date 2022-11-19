@@ -8,7 +8,25 @@ import Modal from 'react-bootstrap/Modal';
 export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
-    const [obtenerPanel,,] = Peticiones();
+    const [datosForm,setDatosForm] = useState({});
+    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
+
+    const guardarDatos=(objeto)=>{
+        let temp = {...datosForm};
+        temp[objeto.target.id]=objeto.target.value;
+        setDatosForm(temp);
+        console.log(temp)
+    }
+    const enviarForm = ()=>{
+
+        const form = {
+            "descripcion": datosForm.descripcion,
+            "puntos_requeridos": datosForm.puntos_requeridos
+        }
+        console.log(form);
+        guardarNuevoJson('nuevo/punto',form)
+
+    }
 
     useEffect(()=>{
         console.log("Testing traida datos");
@@ -51,11 +69,11 @@ export const Panel = () => {
                     <Modal.Title>Conceptos </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Formulario />
+                    <Formulario almacenDatos = {guardarDatos}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success"  >Guardar</Button>
+                    <Button variant="success" onClick={()=>enviarForm()}  >Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>

@@ -17,7 +17,7 @@ export const Panel = () => {
 
     return (
         <>
-            <h1>Clientes</h1>
+            <h1>Bolsas de Puntos</h1>
             <br/>
             <div className="container-fluid " id="acciones">
                 <div className="row">
@@ -34,7 +34,7 @@ export const Panel = () => {
                         </div>
                     </div>
                     <div className="col-sm-8 d-flex flex-row-reverse">
-                        <Button variant="primary" onClick={()=>setEstadoForm(!estadoForm)}>Nueva bolsa de puntos</Button>
+                        
                     </div>
                 </div>
                 <hr/>
