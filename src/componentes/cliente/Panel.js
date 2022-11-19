@@ -8,10 +8,34 @@ import Modal from 'react-bootstrap/Modal';
 export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
-    const [obtenerPanel,,] = Peticiones();
+    const [datosForm,setDatosForm] = useState({});
+    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
 
+
+    const guardarDatos=(objeto)=>{
+        let temp = {...datosForm};
+        temp[objeto.target.id]=objeto.target.value;
+        setDatosForm(temp);
+
+    }
+    const enviarForm = ()=>{
+        console.log(guardarNuevoJson)
+        const form = {
+            'nombre':datosForm.nombre,
+            'apellido':datosForm.apellido,
+            'mail':datosForm.mail,
+            'nro_doc':datosForm.nro_doc,
+            'telefono':datosForm.telefono,
+            'fecha_nacimiento':datosForm.nombre,
+            'id_tipo_doc':datosForm.tipo_doc,
+            'id_nacionalidad':datosForm.nacionalidad,
+            'fecha_nacimiento':datosForm.f_nac,
+        }
+        console.log(form);
+        guardarNuevoJson('nuevo/cliente',form)
+
+    }
     useEffect(()=>{
-        console.log("Testing traida datos")
         obtenerPanel("listar/cliente",setDatos)
     },[]);
 
@@ -51,11 +75,11 @@ export const Panel = () => {
                     <Modal.Title>Cliente </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Formulario />
+                    <Formulario almacenDatos = {guardarDatos}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success"  >Guardar</Button>
+                    <Button variant="success" onClick={()=>enviarForm()} >Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>

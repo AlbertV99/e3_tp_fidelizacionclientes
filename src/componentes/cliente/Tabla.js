@@ -25,7 +25,7 @@ const  Tabla = ({datos}) => {
                 {
                     datos.datos.map(
                     (fila)=>{
-                        return <Fila key="fila-{fila.id}" dato ={fila}/>
+                        return <Fila key={"fila-"+fila.id+""} dato ={fila}/>
                     })
                 }
             </tbody>
