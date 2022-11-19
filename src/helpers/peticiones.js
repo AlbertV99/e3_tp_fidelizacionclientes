@@ -30,6 +30,7 @@ const Peticiones = () => {
 
     const guardarNuevoJson = async (modulo,datos)=>{
         const url = base + modulo ;
+        console.log(url)
         const temp = await fetch(url, {
           "method": "POST",
           "headers": {
@@ -37,9 +38,10 @@ const Peticiones = () => {
            },
             "body": JSON.stringify(datos)
         });
-        const res = await fetch(url)
-        const data = await res.json();
-
+        console.log(temp);
+        // const res = await fetch(url)
+        const data = await temp.json();
+        console.log(data);
     }
 
     const guardarNuevoArchivo = async (modulo,datos)=>{
