@@ -4,7 +4,7 @@ import Fila from './Fila'
 
 const  Tabla = ({datos}) => {
     //// <th>Nombre</th><th>Correo</th><th>Rol</th>
-    const cabecera=["Id","Limite Inferior","Limite Superior","Monto Equivalencia"];
+    const cabecera=["Id","Limite Inferior","Limite Superior","Monto Equivalencia", "Dias Vencimiento"];
     console.log(datos)
   return (
     <>
