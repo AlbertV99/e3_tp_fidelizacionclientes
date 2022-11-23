@@ -37,7 +37,7 @@ const NavbarSis = () =>{
               <NavDropdown.Divider />
               <NavDropdown.Item href="home">Bolsa de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="home">Clientes con puntos a vencer</NavDropdown.Item>
+              <NavDropdown.Item href="consulta_cliente_puntos">Clientes con puntos a vencer</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="consulta_cliente">Consulta de clientes</NavDropdown.Item>
             </NavDropdown>
