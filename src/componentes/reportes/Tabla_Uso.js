@@ -4,7 +4,7 @@ import Fila_Uso from './Fila_Uso'
 
 const  Tabla_Uso = ({datos}) => {
     //// <th>Nombre</th><th>Correo</th><th>Rol</th>
-    const cabecera=["fecha", "nombre", "apellido", "nro_doc", "descripcion", "puntaje_utilizado"];
+    const cabecera=["Fecha", "Nombre", "Apellido", "Documento", "Descripcion", "Puntaje utilizado"];
     console.log(datos)
   return (
     <>
