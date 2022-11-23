@@ -18,6 +18,7 @@ import ConsultarMonto from './componentes/servicio/consultar_punto_ por_monto';
 import UsoPunto from './componentes/reportes/uso_puntos';
 import CargarPuntos from './componentes/servicio/carga_puntos';
 import UtilizarPuntos from './componentes/servicio/utilizar_puntos';
+import ConsultaBolsaRango from './componentes/reportes/consulta_bolsa';
 
 
 
@@ -37,6 +38,7 @@ root.render(
         <Route  path='bolsasPunto' element={<BolsasPunto/>} />
         <Route  path='consulta_cliente' element={<ConsultaClientes/>} />
         <Route  path='consulta_cliente_puntos' element={<ConsultaPuntosVencer/>} />
+        <Route  path='consulta_bolsa_puntos' element={<ConsultaBolsaRango/>} />
         <Route  path='consulta_monto' element={<ConsultarMonto/>} />
         <Route  path='carga_puntos' element={<CargarPuntos/>} />
         <Route  path='utilizar_puntos' element={<UtilizarPuntos/>} />

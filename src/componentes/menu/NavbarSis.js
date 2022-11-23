@@ -35,7 +35,7 @@ const NavbarSis = () =>{
             <NavDropdown title="Reportes" id="collasible-nav-dropdown">
               <NavDropdown.Item href="usopunto">Uso de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="home">Bolsa de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="consulta_bolsa_puntos">Bolsa de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="consulta_cliente_puntos">Clientes con puntos a vencer</NavDropdown.Item>
               <NavDropdown.Divider />
