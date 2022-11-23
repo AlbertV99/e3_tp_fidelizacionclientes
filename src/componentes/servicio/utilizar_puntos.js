@@ -8,6 +8,7 @@ const UtilizarPuntos = () => {
     const [estadoForm,setEstadoForm] = useState(true);
     const [datosForm,setDatosForm] = useState({});
     const [datosCliente,setDatosCliente] = useState({"datos":[]});
+    const [datosConcepto,setDatosConcepto] = useState({"datos":[]});
     const [obtenerPanel,guardarNuevoJson,] = Peticiones();
     const [monto,setDatosMonto] = useState({});
 
@@ -23,16 +24,16 @@ const UtilizarPuntos = () => {
     const enviarForm = ()=>{
         let form = {
             "id_cliente":datosForm.cliente,
-            "monto_saldo":datosForm.monto,
+            "id_concepto_punto":datosForm.concepto,
         }
-        obtenerPanel('reporte/reglaspunto',setDatosMonto,datosForm.monto);
-        guardarNuevoJson('servicio/cargapuntos',form);
+        console.log(form);
+        guardarNuevoJson('nuevo/usopunto',form);
 
     }
 
     useEffect(()=>{
         obtenerPanel("listar/cliente",setDatosCliente);
-
+        obtenerPanel("listar/conceptopuntos",setDatosConcepto);
     },[]);
 
 
@@ -56,15 +57,21 @@ const UtilizarPuntos = () => {
                         </Form.Select>
                     </div>
                     <div className="row" >
-                        <Form.Label htmlFor="monto">Monto de Compra </Form.Label>
-                        <Form.Control type="number" min="0" id="monto" onChange={(e)=>{guardarDatos(e)}} />
+                        <Form.Label htmlFor="concepto">Concepto </Form.Label>
+                        <Form.Select aria-label="Default select example" id ="concepto" onChange={(e)=>{guardarDatos(e)}} >
+                            <option> </option>
+                            {
+                                datosConcepto.datos.map((dato,fila)=>{
+                                    return <option key={dato.id} value={dato.id}>{ dato.descripcion}</option>
+                                })
+                            }
+                        </Form.Select>
                     </div>
                 </div>
             </Modal.Body>
             <Modal.Body>
                 <div className="container">
                     <div className="row" >
-                        {/* <Form.Label htmlFor="cantidad_puntos">Cantidad de puntos que equivale </Form.Label> */}
                         <div className="alert alert-primary bi bi-info-circle-fill" role="alert">  La cantidad de puntos es: {monto.puntaje_asignado} </div>
                     </div>
                 </div>
