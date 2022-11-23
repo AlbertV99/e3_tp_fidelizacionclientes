@@ -1,23 +1,27 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Form from 'react-bootstrap/Form';
 
-const Formulario = () => {
+const Formulario = ({almacenDatos}) => {
   return (
       <div className="container">
           <div className="row" >
             <Form.Label htmlFor="f_inicio">Fecha de inicio</Form.Label>
-            <Form.Control type="date" id="f_inicio"/>
+            <Form.Control type="date" id="f_inicio" onChange={(e)=>{almacenDatos(e)}}/>
           </div>
           <div className="row" >
             <Form.Label htmlFor="f_fin">Fecha de inicio</Form.Label>
-            <Form.Control type="date" id="f_fin"/>
+            <Form.Control type="date" id="f_fin" onChange={(e)=>{almacenDatos(e)}}/>
           </div>
           <div className="row" >
             <Form.Label htmlFor="duracion">Duracion</Form.Label>
-            <Form.Control type="text" id="duracion"/>
+            <Form.Control type="text" id="duracion" onChange={(e)=>{almacenDatos(e)}}/>
           </div>
       </div>
   )
+}
+Formulario.propTypes = {
+  datos:PropTypes.func
 }
 
 export default Formulario
