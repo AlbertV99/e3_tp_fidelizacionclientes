@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+    import React,{useState,useEffect} from 'react';
 import Tabla from './Tabla';
 import Formulario from './Formulario';
 import Peticiones from '../../helpers/peticiones';
@@ -8,12 +8,33 @@ import Modal from 'react-bootstrap/Modal';
 export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
-    const [obtenerPanel,,] = Peticiones();
+    const [datosForm,setDatosForm] = useState({});
+    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
 
     useEffect(()=>{
         console.log("Testing traida datos");
         obtenerPanel("listar/vencimientopuntos",setDatos)
     },[]);
+
+    const guardarDatos=(objeto)=>{
+        let temp = {...datosForm};
+        temp[objeto.target.id]=objeto.target.value;
+        setDatosForm(temp);
+    }
+
+    const enviarForm = ()=>{
+        console.log(guardarNuevoJson)
+
+        const form = {
+            "fecha_inicio": datosForm.f_inicio,
+            "fecha_fin": datosForm.f_fin,
+            "duracion": datosForm.duracion
+        }
+
+        console.log(form);
+        guardarNuevoJson('nuevo/vencimientopunto',form)
+
+    }
 
     return (
         <>
@@ -45,11 +66,11 @@ export const Panel = () => {
                     <Modal.Title>Vencimiento de puntos </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Formulario />
+                    <Formulario almacenDatos={guardarDatos}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success"  >Guardar</Button>
+                    <Button variant="success" onClick={()=>enviarForm()} >Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>
