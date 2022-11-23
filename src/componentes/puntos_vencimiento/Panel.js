@@ -66,11 +66,11 @@ export const Panel = () => {
                     <Modal.Title>Vencimiento de puntos </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Formulario almacenDatos={guardarDatos}/>
+                    <Formulario almacenDatos = {guardarDatos} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success" onClick={()=>enviarForm()} >Guardar</Button>
+                    <Button variant="success"  onClick={()=>enviarForm()} >Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>

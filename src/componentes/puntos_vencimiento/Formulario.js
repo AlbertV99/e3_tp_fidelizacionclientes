@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Form from 'react-bootstrap/Form';
 
 const Formulario = ({almacenDatos}) => {
@@ -18,6 +19,9 @@ const Formulario = ({almacenDatos}) => {
           </div>
       </div>
   )
+}
+Formulario.propTypes = {
+  datos:PropTypes.func
 }
 
 export default Formulario
