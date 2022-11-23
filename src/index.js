@@ -14,6 +14,7 @@ import House from './componentes/menu/Home'
 import Bolsa from './componentes/reportes/bolsa_puntos'
 import ConsultaClientes from './componentes/reportes/consulta_cliente';
 import ConsultarMonto from './componentes/servicio/consultar_punto_ por_monto';
+import UsoPunto from './componentes/reportes/uso_puntos';
 
 
 
@@ -29,8 +30,8 @@ root.render(
         <Route  path='conceptos' element={<Conceptos/>} />
         <Route  path='reglasPuntos' element={<ReglasPuntos/>} />
         <Route  path='puntosVencimiento' element={<PuntosVencimiento/>} />
+        <Route  path='usopunto' element={<UsoPunto/>} />
         <Route  path='bolsasPunto' element={<BolsasPunto/>} />
-        <Route  path='bolsas' element={<Bolsa/>} />
         <Route  path='consulta_cliente' element={<ConsultaClientes/>} />
         <Route  path='consulta_monto' element={<ConsultarMonto/>} />
       </Route>
