@@ -64,7 +64,7 @@ const ConsultaClientes = () => {
                         }
                         </Form.Select>
                     </div>
-                    <br/>
+
                     <div className="row" style={{display:( datosForm.filtro  ==  'Apellido' ? "block" : 'none')}}>
                         <Form.Label htmlFor="apellido">Apellido</Form.Label>
                         <Form.Select  id="apellido" onChange={(e)=>{guardarDatos(e)}}><option></option>
@@ -75,7 +75,7 @@ const ConsultaClientes = () => {
                         }
                         </Form.Select>
                     </div>
-                    <br/>
+
                     <div className="row" style={{display:( datosForm.filtro  ==  'Cumpleaños' ? "block" : 'none')}}>
                         <Form.Label htmlFor="cumpleaños" >Cumpleaños</Form.Label>
                         <Form.Control type="date" id="cumpleaños" onChange={(e)=>{guardarDatos(e)}}/>
