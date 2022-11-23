@@ -41,14 +41,6 @@ export const Panel = () => {
                 <div className="row">
                     <div className="col-sm-4 ">
                         <div className="btn-grip">
-                            <button className = "btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#modalFiltro" >Filtros</button>
-
-                            <div className="btn-group" role="group" aria-label="Basic example">
-                                <Button variant="primary"  ><i className="bi bi-caret-left-fill"></i></Button>
-                                <button type="button" className="btn btn-outline-primary"> {datos.pagina_actual} </button>
-                                <Button variant="primary" ><i className="bi bi-caret-right-fill"></i></Button>
-                            </div>
-
                         </div>
                     </div>
                     <div className="col-sm-8 d-flex flex-row-reverse">
