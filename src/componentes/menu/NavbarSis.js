@@ -30,7 +30,7 @@ const NavbarSis = () =>{
               <NavDropdown.Divider />
               <NavDropdown.Item href="reglasPuntos">Reglas de asignacion de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="puntosVencimiento">Parametrizacion de vencimientos de puntos</NavDropdown.Item>   
+              <NavDropdown.Item href="puntosVencimiento">Parametrizacion de vencimientos de puntos</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="home">Uso de puntos</Nav.Link>
             <NavDropdown title="Reportes" id="collasible-nav-dropdown">
@@ -43,7 +43,7 @@ const NavbarSis = () =>{
               <NavDropdown.Item href="consulta_cliente">Consulta de clientes</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Servicios" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="home">Carga de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="carga_puntos">Carga de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="home">Utilizar puntos</NavDropdown.Item>
               <NavDropdown.Divider />
