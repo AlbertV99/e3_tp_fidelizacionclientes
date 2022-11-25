@@ -32,6 +32,8 @@ root.render(
         <Route index element={<Login />} />
         <Route  path='Login' element={<Login/>} />
         <Route  path='home' element={<House/>} >
+            <Route index element={<Home />} />
+
             <Route  path='clientes' element={<Cliente/>} />
             <Route  path='conceptos' element={<Conceptos/>} />
             <Route  path='reglasPuntos' element={<ReglasPuntos/>} />
