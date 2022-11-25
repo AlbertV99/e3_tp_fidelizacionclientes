@@ -22,17 +22,17 @@ const Login = () =>{
                             <Form.Control type="password"  />
                         </Form.Group>
                         <br/>
-                        <Link to="/"><Button  className="w-100" type="submit">Iniciar</Button></Link>
+                        <Link to="/home"><Button  className="w-100" type="submit">Iniciar</Button></Link>
                     </Form>
                         <div className="w-100 text-center mt-3">
                         {/* <Link to="/forgot-password">Forgot Password?</Link> */}
                         </div>
                     </Card.Body>
                 </Card>
-                
+
             </Container>
         </>
     );
   }
-  
+
   export default Login

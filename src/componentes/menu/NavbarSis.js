@@ -16,37 +16,37 @@ const NavbarSis = () =>{
               className="d-inline-block align-top"
             />
             </Navbar.Brand>
-        <Navbar.Brand href="home">Fidelizacion Clientes</Navbar.Brand>
+        <Navbar.Brand href="/home">Fidelizacion Clientes</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Clientes" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="bolsasPunto">Bolsas de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/bolsasPunto">Bolsas de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="clientes">Cliente</NavDropdown.Item>
+              <NavDropdown.Item href="/home/clientes">Cliente</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Puntos" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="conceptos">Conceptos de uso de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/conceptos">Conceptos de uso de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="reglasPuntos">Reglas de asignacion de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/reglasPuntos">Reglas de asignacion de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="puntosVencimiento">Parametrizacion de vencimientos de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/puntosVencimiento">Parametrizacion de vencimientos de puntos</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Reportes" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="usopunto">Uso de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/usopunto">Uso de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="consulta_bolsa_puntos">Bolsa de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/consulta_bolsa_puntos">Bolsa de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="consulta_cliente_puntos">Clientes con puntos a vencer</NavDropdown.Item>
+              <NavDropdown.Item href="/home/consulta_cliente_puntos">Clientes con puntos a vencer</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="consulta_cliente">Consulta de clientes</NavDropdown.Item>
+              <NavDropdown.Item href="/home/consulta_cliente">Consulta de clientes</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Servicios" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="carga_puntos">Carga de puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/carga_puntos">Carga de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="utilizar_puntos">Utilizar puntos</NavDropdown.Item>
+              <NavDropdown.Item href="/home/utilizar_puntos">Utilizar puntos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="consulta_monto">Consultar puntos por x monto</NavDropdown.Item>
+              <NavDropdown.Item href="/home/consulta_monto">Consultar puntos por x monto</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
