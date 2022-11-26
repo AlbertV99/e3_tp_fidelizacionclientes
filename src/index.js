@@ -7,6 +7,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import {Panel as Cliente} from './componentes/cliente/Panel'
 import {Panel as Conceptos} from './componentes/conceptos_punto/Panel'
 import {Panel as ReglasPuntos} from './componentes/reglas_punto/Panel'
+import {Panel as SorteoPremios} from './componentes/sorteo_premios/Panel'
 import {Panel as PuntosVencimiento} from './componentes/puntos_vencimiento/Panel'
 import {Panel as BolsasPunto} from './componentes/bolsas_punto/Panel'
 import Home from './componentes/menu/Home'
@@ -20,7 +21,6 @@ import UsoPunto from './componentes/reportes/uso_puntos';
 import CargarPuntos from './componentes/servicio/carga_puntos';
 import UtilizarPuntos from './componentes/servicio/utilizar_puntos';
 import ConsultaBolsaRango from './componentes/reportes/consulta_bolsa';
-
 
 
 
@@ -38,6 +38,7 @@ root.render(
             <Route  path='conceptos' element={<Conceptos/>} />
             <Route  path='reglasPuntos' element={<ReglasPuntos/>} />
             <Route  path='puntosVencimiento' element={<PuntosVencimiento/>} />
+            <Route  path='sorteoPremios' element={<SorteoPremios/>} />
             <Route  path='usopunto' element={<UsoPunto/>} />
             <Route  path='bolsasPunto' element={<BolsasPunto/>} />
             <Route  path='consulta_cliente' element={<ConsultaClientes/>} />
