@@ -31,6 +31,8 @@ const NavbarSis = () =>{
               <NavDropdown.Item href="/home/reglasPuntos">Reglas de asignacion de puntos</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/home/puntosVencimiento">Parametrizacion de vencimientos de puntos</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/home/sorteoPremios">Parametrizacion de sorteo de premios</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Reportes" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/home/usopunto">Uso de puntos</NavDropdown.Item>
