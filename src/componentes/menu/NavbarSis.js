@@ -50,7 +50,9 @@ const NavbarSis = () =>{
             </NavDropdown>
           </Nav>
           <Nav>
-
+            <NavDropdown title="Cerrar Sesion" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/Login"><i class="bi bi-box-arrow-right">    Salir</i></NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
