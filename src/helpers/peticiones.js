@@ -19,6 +19,7 @@ const Peticiones = () => {
         setState(data)
         // setCarga(false)
     }
+
     const obtenerUnicoRegistro = async (modulo,id) =>{
         // setCarga(true)
         // IDEA: Cambiar por constante de ambiente
@@ -79,20 +80,28 @@ const Peticiones = () => {
         const data = await res.json();
 
     }
+
     const eliminarRegistro = async (modulo,id)=>{
         const url = base + modulo + "/" + id ;
         const temp = await fetch(url, {
-          "method": "PUT",
-          "headers": {
-            "Content-Type": "application/json",
-           },
+          "method": "DELETE",
         });
         const res = await fetch(url)
         const data = await res.json();
 
     }
 
-    return [obtenerPanel,guardarNuevoJson,guardarNuevoArchivo]
+    const endpointLibre = async (modulo,metodo)=>{
+        const url = base + modulo ;
+        const temp = await fetch(url, {
+          "method": metodo,
+        });
+
+        const res = await fetch(url)
+        const data = await res.json();
+
+    }
+    return [obtenerPanel,guardarNuevoJson,obtenerUnicoRegistro,eliminarRegistro,endpointLibre]
 }
 
 export default Peticiones
