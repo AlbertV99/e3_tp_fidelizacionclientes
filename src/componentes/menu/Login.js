@@ -2,12 +2,16 @@ import {useRef, useState} from 'react'
 import { Form, Button, Card, Alert, Container } from "react-bootstrap"
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import Peticiones from '../../helpers/peticiones';
 
 const Login = () =>{
     const captcha = useRef(null);
+    const [datosForm,setDatosForm] = useState({});
     const [captchaValido, cambiarCaptchaValido] = useState(null);
     const [usuarioValido, cambiarUsuarioValido] = useState(false);
+    const [endpoint, endpointValido] =useState(false);
+    const [,,,,endpointLibre] = Peticiones();
+
     const onChange =() => {
         console.log(captcha.current.getValue());
         if(captcha.current.getValue()){
@@ -16,7 +20,19 @@ const Login = () =>{
         }
     }
 
+    const guardarDatos=(objeto)=>{
+        let temp = {...datosForm};
+        temp[objeto.target.id]=objeto.target.value;
+        setDatosForm(temp);
+        console.log(temp);
 
+    }
+
+    const enviarForm = ()=>{
+        endpoint = endpointLibre('listar/usuario/nombre/'+datosForm.usuario+'/pass/'+datosForm.pass);
+        console.log(endpoint)
+
+    }
 
     return (
         <>
@@ -34,13 +50,13 @@ const Login = () =>{
                         </div>
                         {/* {error && <Alert variant="danger">{error}</Alert>} */}
                             <Form>
-                                <Form.Group id="email">
-                                    <Form.Label className="d-flex justify-content-start">Correo Electronico</Form.Label>
-                                    <Form.Control type="email"/>
+                                <Form.Group >
+                                    <Form.Label className="d-flex justify-content-start">Usuario</Form.Label>
+                                    <Form.Control id="usuario" onChange={(e)=>{guardarDatos(e)}}/>
                                 </Form.Group>
-                                <Form.Group id="password">
+                                <Form.Group >
                                     <Form.Label className="d-flex justify-content-start">Contraseña</Form.Label>
-                                    <Form.Control type="password"  />
+                                    <Form.Control type="password" id="password" onChange={(e)=>{guardarDatos(e)}} />
                                 </Form.Group>
                                 <div className="w-100 text-center mt-3">
                                 {/* <Link to="/forgot-password">Forgot Password?</Link> */}
@@ -48,10 +64,10 @@ const Login = () =>{
                                     ref={captcha}
                                     sitekey="6LcIdDUjAAAAAC8-bKqaoNltVOMS2VvHioXZdIti"
                                     onChange={onChange}
-                                  />,
+                                  />, 
                                 </div>
                                 {usuarioValido &&
-                                    <Link to="/home"><Button  className="w-100" type="submit" style={{backgroundColor: "#01569a",borderColor: "#01569a"}}>Iniciar</Button></Link>
+                                   <Button onClick={()=>enviarForm()}   className="w-100" type="submit" style={{backgroundColor: "#01569a",borderColor: "#01569a"}}>Iniciar</Button>
                                 }
                                 
                             </Form>
