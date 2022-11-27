@@ -9,9 +9,12 @@ export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
     const [datosForm,setDatosForm] = useState({});
-    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
+    const [obtenerPanel,guardarNuevoJson,obtenerUnicoRegistro,eliminarRegistro,endpointLibre] = Peticiones();
 
-
+    const eliminarFila = async (id)=>{
+        let temp = await eliminarRegistro('eliminar/cliente',id)
+        console.log(temp)
+    }
     const guardarDatos=(objeto)=>{
         let temp = {...datosForm};
         temp[objeto.target.id]=objeto.target.value;
@@ -46,7 +49,7 @@ export const Panel = () => {
             <div className="container-fluid " id="acciones">
                 <div className="row">
                     <div className="col-sm-4 ">
-      
+
                     </div>
                     <div className="col-sm-8 d-flex flex-row-reverse">
                         <Button variant="primary" onClick={()=>setEstadoForm(!estadoForm)}>Nuevo Cliente</Button>
@@ -57,7 +60,7 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos}/>
+                    <Tabla datos={datos} eliminar = {eliminarFila}/>
                 </div>
 
             </div>

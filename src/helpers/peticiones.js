@@ -43,6 +43,7 @@ const Peticiones = () => {
         // const res = await fetch(url)
         const data = await temp.json();
         console.log(data);
+        return data;
     }
 
     const guardarNuevoArchivo = async (modulo,datos)=>{
@@ -88,7 +89,7 @@ const Peticiones = () => {
         });
         const res = await fetch(url)
         const data = await res.json();
-
+        return data;
     }
 
     const endpointLibre = async (modulo,metodo)=>{
@@ -99,7 +100,7 @@ const Peticiones = () => {
 
         const res = await fetch(url)
         const data = await res.json();
-
+        return data;
     }
     return [obtenerPanel,guardarNuevoJson,obtenerUnicoRegistro,eliminarRegistro,endpointLibre]
 }
