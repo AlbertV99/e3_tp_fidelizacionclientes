@@ -94,6 +94,7 @@ const Peticiones = () => {
 
     const endpointLibre = async (modulo,metodo)=>{
         const url = base + modulo ;
+        console.log(url)
         const temp = await fetch(url, {
           "method": metodo,
         });

@@ -1,22 +1,22 @@
 import {useRef, useState} from 'react'
 import { Form, Button, Card, Alert, Container } from "react-bootstrap"
-import { Link } from "react-router-dom";
+import { Navigate  } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import Peticiones from '../../helpers/peticiones';
 
 const Login = () =>{
     const captcha = useRef(null);
     const [datosForm,setDatosForm] = useState({});
-    const [captchaValido, cambiarCaptchaValido] = useState(null);
+    const [captchaValido, cambiarCaptchaValido] = useState(false);
     const [usuarioValido, cambiarUsuarioValido] = useState(false);
-    const [endpoint, endpointValido] =useState(false);
+
     const [,,,,endpointLibre] = Peticiones();
 
     const onChange =() => {
         console.log(captcha.current.getValue());
         if(captcha.current.getValue()){
             console.log("El usuario no es un robot")
-            cambiarUsuarioValido(true);
+            cambiarCaptchaValido(true);
         }
     }
 
@@ -28,9 +28,12 @@ const Login = () =>{
 
     }
 
-    const enviarForm = ()=>{
-        endpoint = endpointLibre('listar/usuario/nombre/'+datosForm.usuario+'/pass/'+datosForm.pass);
+    const enviarForm = async ()=>{
+        let endpoint = await endpointLibre('listar/usuario/nombre/'+datosForm.usuario+'/pass/'+datosForm.password, "GET");
         console.log(endpoint)
+        if(endpoint.usuarios== 1){
+            cambiarUsuarioValido(true);
+        }
 
     }
 
@@ -66,10 +69,12 @@ const Login = () =>{
                                     onChange={onChange}
                                   />, 
                                 </div>
-                                {usuarioValido &&
-                                   <Button onClick={()=>enviarForm()}   className="w-100" type="submit" style={{backgroundColor: "#01569a",borderColor: "#01569a"}}>Iniciar</Button>
+                                {captchaValido &&
+                                   <Button onClick={()=>enviarForm()}   className="w-100" type="button" style={{backgroundColor: "#01569a",borderColor: "#01569a"}}>Iniciar</Button>
                                 }
-                                
+                                {usuarioValido && (
+                                    <Navigate to="/home" replace={true} />
+                                )}
                             </Form>
                     </Card.Body>
                 </Card>
