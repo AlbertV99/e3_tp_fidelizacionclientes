@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const  Fila = ({dato}) => {
-
+const  Fila = (prop) => {
+    const {dato,eliminar} = prop;
     return (
         <tr>
             <td>{dato.nombre}</td>
@@ -10,6 +10,7 @@ const  Fila = ({dato}) => {
             <td>{dato.nro_doc}</td>
             <td>{dato.telefono}</td>
             <td>{dato.nacionalidad}</td>
+            { (prop.eliminar && <td><button onClick={()=>{eliminar(dato.id)}}> Eliminar</button></td>) }
         </tr>
 
     )

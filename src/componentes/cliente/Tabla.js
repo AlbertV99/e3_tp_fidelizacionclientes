@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Fila from './Fila'
 
-const  Tabla = ({datos}) => {
+const  Tabla = ({datos,eliminar}) => {
+
     //// <th>Nombre</th><th>Correo</th><th>Rol</th>
     const cabecera=["Nombre","Apellido","cedula","Telefono","Nacionalidad"];
     console.log(datos)
@@ -23,9 +24,8 @@ const  Tabla = ({datos}) => {
             </thead>
             <tbody>
                 {
-                    datos.datos.map(
-                    (fila)=>{
-                        return <Fila key={"fila-"+fila.id+""} dato ={fila}/>
+                    datos.datos.map((fila)=>{
+                        return <Fila key={"fila-"+fila.id+""} dato ={fila} eliminar={eliminar}/>
                     })
                 }
             </tbody>
@@ -35,7 +35,8 @@ const  Tabla = ({datos}) => {
 }
 
 Tabla.propTypes = {
-    datos:PropTypes.object
+    datos:PropTypes.object,
+    eliminar:PropTypes.func
 }
 
 export default Tabla
