@@ -8,6 +8,7 @@ const Login = () =>{
     const captcha = useRef(null);
     const [datosForm,setDatosForm] = useState({});
     const [captchaValido, cambiarCaptchaValido] = useState(false);
+    const [usuario, setUsuario] = useState (true)
     const [usuarioValido, cambiarUsuarioValido] = useState(false);
 
     const [,,,,endpointLibre] = Peticiones();
@@ -33,6 +34,8 @@ const Login = () =>{
         console.log(endpoint)
         if(endpoint.usuarios== 1){
             cambiarUsuarioValido(true);
+        }else{
+            setUsuario(false)
         }
 
     }
@@ -71,10 +74,15 @@ const Login = () =>{
                                 </div>
                                 {captchaValido &&
                                    <Button onClick={()=>enviarForm()}   className="w-100" type="button" style={{backgroundColor: "#01569a",borderColor: "#01569a"}}>Iniciar</Button>
+                                   
                                 }
                                 {usuarioValido && (
                                     <Navigate to="/home" replace={true} />
                                 )}
+                                
+                                { !usuario && 
+                                    <p><i class="bi bi-exclamation-triangle-fill" style={{color: "red"}}>   Usuario Invalido</i></p>
+                                } 
                             </Form>
                     </Card.Body>
                 </Card>
