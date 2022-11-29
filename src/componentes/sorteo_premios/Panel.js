@@ -9,7 +9,7 @@ export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
     const [datosForm,setDatosForm] = useState({});
-    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
+    const [obtenerPanel,guardarNuevoJson,,eliminarRegistro,] = Peticiones();
 
     const guardarDatos=(objeto)=>{
         let temp = {...datosForm};
@@ -17,6 +17,12 @@ export const Panel = () => {
         setDatosForm(temp);
 
     }
+
+    const eliminarFila = async (id)=>{
+        let temp = await eliminarRegistro('eliminar/reglasorteo',id)
+        console.log(temp)
+    }
+
     const enviarForm = ()=>{
         console.log(guardarNuevoJson)
         const form = {
@@ -52,7 +58,7 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos}/>
+                    <Tabla datos={datos} eliminar = {eliminarFila}/>
                 </div>
 
             </div>
