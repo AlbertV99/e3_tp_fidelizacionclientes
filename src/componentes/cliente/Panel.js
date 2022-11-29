@@ -15,6 +15,7 @@ export const Panel = () => {
         let temp = await eliminarRegistro('eliminar/cliente',id)
         console.log(temp)
     }
+
     const guardarDatos=(objeto)=>{
         let temp = {...datosForm};
         temp[objeto.target.id]=objeto.target.value;
@@ -60,7 +61,7 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos} eliminar = {eliminarFila}/>
+                    <Tabla datos={datos}  eliminar = {eliminarFila}/>
                 </div>
 
             </div>

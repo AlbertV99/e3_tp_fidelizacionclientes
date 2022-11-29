@@ -9,8 +9,7 @@ export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
     const [datosForm,setDatosForm] = useState({});
-    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
-
+    const [obtenerPanel,guardarNuevoJson,obtenerUnicoRegistro,eliminarRegistro,endpointLibre] = Peticiones();
     const guardarDatos=(objeto)=>{
         let temp = {...datosForm};
         temp[objeto.target.id]=objeto.target.value;
@@ -26,6 +25,11 @@ export const Panel = () => {
         console.log(form);
         guardarNuevoJson('nuevo/punto',form)
 
+    }
+
+    const eliminarFila = async (id)=>{
+        let temp = await eliminarRegistro('eliminar/punto',id)
+        console.log(temp)
     }
 
     useEffect(()=>{
@@ -52,7 +56,7 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos}/>
+                    <Tabla datos={datos} eliminar = {eliminarFila}/>
                 </div>
 
             </div>
