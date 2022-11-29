@@ -18,7 +18,7 @@ const Formulario = ({almacenDatos}) => {
             <Form.Control type="number" min="0" id="monto_equivalencia" onChange={(e)=>{almacenDatos(e)}}/>
           </div>
           <div className="row" >
-            <Form.Label htmlFor="dias_vencimiento">Monto equivalencia</Form.Label>
+            <Form.Label htmlFor="dias_vencimiento">Dias para el vencimiento</Form.Label>
             <Form.Control type="number" min="0" id="dias_vencimiento" onChange={(e)=>{almacenDatos(e)}}/>
           </div>
       </div>
