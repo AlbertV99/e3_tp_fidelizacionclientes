@@ -9,7 +9,7 @@ export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
     const [datosForm,setDatosForm] = useState({});
-    const [obtenerPanel,guardarNuevoJson,] = Peticiones();
+    const [obtenerPanel,guardarNuevoJson,,eliminarRegistro,] = Peticiones();
 
     useEffect(()=>{
         console.log("Testing traida datos");
@@ -36,6 +36,12 @@ export const Panel = () => {
 
     }
 
+    const eliminarFila = async (id)=>{
+        let temp = await eliminarRegistro('eliminar/vencimientopunto',id)
+        console.log(temp);
+        setDatos(datos);
+    }
+
     return (
         <>
             <h1> Vencimiento de puntos</h1>
@@ -57,7 +63,7 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos}/>
+                    <Tabla datos={datos} eliminar = {eliminarFila}/>
                 </div>
 
             </div>
