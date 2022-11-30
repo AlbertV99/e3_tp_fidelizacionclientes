@@ -37,6 +37,7 @@ export const Panel = () => {
         }
         console.log(form);
         guardarNuevoJson('nuevo/cliente',form)
+        setEstadoForm(false)
 
     }
     useEffect(()=>{
@@ -74,7 +75,7 @@ export const Panel = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success" onClick={()=>enviarForm()} >Guardar</Button>
+                    <Button variant="success" onClick={()=>{enviarForm();obtenerPanel("listar/cliente",setDatos)}} >Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>
