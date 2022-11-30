@@ -9,12 +9,7 @@ export const Panel = () => {
     const [datos,setDatos] = useState({"pagina_actual":0,"cantidad_paginas":0,"datos":[]});
     const [estadoForm,setEstadoForm] = useState(false);
     const [datosForm,setDatosForm] = useState({});
-    const [obtenerPanel,guardarNuevoJson,obtenerUnicoRegistro,eliminarRegistro,endpointLibre] = Peticiones();
-
-    const eliminarFila = async (id)=>{
-        let temp = await eliminarRegistro('eliminar/cliente',id)
-        console.log(temp)
-    }
+    const [obtenerPanel,guardarNuevoJson,,eliminarRegistro,] = Peticiones();
 
     const guardarDatos=(objeto)=>{
         let temp = {...datosForm};
@@ -22,39 +17,40 @@ export const Panel = () => {
         setDatosForm(temp);
 
     }
+
+    const eliminarFila = async (id)=>{
+        let temp = await eliminarRegistro('eliminar/reglasorteo',id)
+        console.log(temp)
+    }
+
     const enviarForm = ()=>{
         console.log(guardarNuevoJson)
         const form = {
-            'nombre':datosForm.nombre,
-            'apellido':datosForm.apellido,
-            'mail':datosForm.mail,
-            'nro_doc':datosForm.nro_doc,
-            'telefono':datosForm.telefono,
-            'fecha_nacimiento':datosForm.nombre,
-            'id_tipo_doc':datosForm.tipo_doc,
-            'id_nacionalidad':datosForm.nacionalidad,
-            'fecha_nacimiento':datosForm.f_nac,
+            'limite_inferior':datosForm.limite_inferior,
+            'limite_superior':datosForm.limite_superior,
+            'descripcion':datosForm.descripcion,
+            'fecha_sorteo':datosForm.fecha_sorteo,
         }
         console.log(form);
-        guardarNuevoJson('nuevo/cliente',form)
-        setEstadoForm(false)
+        guardarNuevoJson('nuevo/reglasorteo',form)
 
     }
     useEffect(()=>{
-        obtenerPanel("listar/cliente",setDatos)
+        console.log("Testing traida de datos");
+        obtenerPanel("listar/reglasorteo",setDatos)
     },[]);
 
     return (
         <>
-            <h1>Clientes</h1>
+            <h1>Parametrizacion de sorteo de premios</h1>
             <br/>
             <div className="container-fluid " id="acciones">
                 <div className="row">
                     <div className="col-sm-4 ">
-
+      
                     </div>
                     <div className="col-sm-8 d-flex flex-row-reverse">
-                        <Button variant="primary" onClick={()=>setEstadoForm(!estadoForm)}>Nuevo Cliente</Button>
+                        <Button variant="primary" onClick={()=>setEstadoForm(!estadoForm)}>Nuevo Sorteo</Button>
                     </div>
                 </div>
                 <hr/>
@@ -62,22 +58,22 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos}  eliminar = {eliminarFila}/>
+                    <Tabla datos={datos} eliminar = {eliminarFila}/>
                 </div>
 
             </div>
             <Modal show={estadoForm}  animation={false} onHide={()=>setEstadoForm(!estadoForm)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Cliente </Modal.Title>
+                    <Modal.Title>Sorteo </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Formulario almacenDatos = {guardarDatos}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success" onClick={()=>{enviarForm();setEstadoForm(!estadoForm)}} >Guardar</Button>
+                    <Button variant="success" onClick={()=>{enviarForm();setEstadoForm(!estadoForm)}}>Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>
     )
-}
+} 

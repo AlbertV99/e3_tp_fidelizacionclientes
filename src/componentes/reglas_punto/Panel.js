@@ -10,11 +10,10 @@ export const Panel = () => {
     const [estadoForm,setEstadoForm] = useState(false);
     const [datosForm,setDatosForm] = useState({});
     const [obtenerPanel,guardarNuevoJson,obtenerUnicoRegistro,eliminarRegistro,endpointLibre] = Peticiones();
-
-    const eliminarFila = async (id)=>{
-        let temp = await eliminarRegistro('eliminar/cliente',id)
-        console.log(temp)
-    }
+    useEffect(()=>{
+        console.log("Testing traida de datos");
+        obtenerPanel("listar/reglaspunto",setDatos)
+    },[]);
 
     const guardarDatos=(objeto)=>{
         let temp = {...datosForm};
@@ -25,36 +24,35 @@ export const Panel = () => {
     const enviarForm = ()=>{
         console.log(guardarNuevoJson)
         const form = {
-            'nombre':datosForm.nombre,
-            'apellido':datosForm.apellido,
-            'mail':datosForm.mail,
-            'nro_doc':datosForm.nro_doc,
-            'telefono':datosForm.telefono,
-            'fecha_nacimiento':datosForm.nombre,
-            'id_tipo_doc':datosForm.tipo_doc,
-            'id_nacionalidad':datosForm.nacionalidad,
-            'fecha_nacimiento':datosForm.f_nac,
+        	"limite_inferior": datosForm.limite_inferior,
+        	"limite_superior": datosForm.limite_superior,
+            "monto_equivalencia": datosForm.monto_equivalencia,
+        	"dias_vencimiento": datosForm.dias_vencimiento
+
         }
         console.log(form);
-        guardarNuevoJson('nuevo/cliente',form)
-        setEstadoForm(false)
+        guardarNuevoJson('nuevo/reglaspunto',form)
 
     }
-    useEffect(()=>{
-        obtenerPanel("listar/cliente",setDatos)
-    },[]);
+
+    const eliminarFila = async (id)=>{
+        let temp = await eliminarRegistro('eliminar/reglaspunto',id)
+        console.log(temp)
+    }
 
     return (
         <>
-            <h1>Clientes</h1>
+            <h1>Reglas de asignacion de puntos</h1>
             <br/>
             <div className="container-fluid " id="acciones">
                 <div className="row">
                     <div className="col-sm-4 ">
+                        <div className="btn-grip">
 
+                        </div>
                     </div>
                     <div className="col-sm-8 d-flex flex-row-reverse">
-                        <Button variant="primary" onClick={()=>setEstadoForm(!estadoForm)}>Nuevo Cliente</Button>
+                        <Button variant="primary" onClick={()=>setEstadoForm(!estadoForm)}>Nueva Regla</Button>
                     </div>
                 </div>
                 <hr/>
@@ -62,13 +60,13 @@ export const Panel = () => {
             <div className="container-fluid">
                 <div className="row">
                     <br/>
-                    <Tabla datos={datos}  eliminar = {eliminarFila}/>
+                    <Tabla datos={datos} eliminar={eliminarFila}/>
                 </div>
 
             </div>
             <Modal show={estadoForm}  animation={false} onHide={()=>setEstadoForm(!estadoForm)}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Cliente </Modal.Title>
+                    <Modal.Title>Conceptos </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Formulario almacenDatos = {guardarDatos}/>
