@@ -75,7 +75,7 @@ export const Panel = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={()=>setEstadoForm(!estadoForm)} >Cerrar</Button>
-                    <Button variant="success" onClick={()=>{enviarForm();obtenerPanel("listar/cliente",setDatos)}} >Guardar</Button>
+                    <Button variant="success" onClick={()=>{enviarForm();setEstadoForm(!estadoForm)}} >Guardar</Button>
                 </Modal.Footer>
             </Modal>
         </>
